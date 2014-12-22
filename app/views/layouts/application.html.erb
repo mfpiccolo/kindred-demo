@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AdequateDemo</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<!-- TODO append this stuff via js on load -->
+<%= kindred_model_data %>
+<%= content_for :kindred_script %>
+<script type="text/javascript">
+  App.BaseUrl = '<%= "#{request.protocol}#{request.host_with_port}" %>';
+</script>
+
+</body>
+</html>
