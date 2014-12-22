@@ -37,8 +37,10 @@
                         options_for_select(["normal", "high", "urgent"]) %>
               </td>
               <td><div data-dirty data-k-uuid=""><%= fa_icon "check-circle-o 2x", style: "color:#2ECC71" %></i></div></td>
-              <td><%= link_to "Save", "#", class: "persist",
-                data: { k_uuid: "{{line_item.uuid}}", invoice_id: @invoice.id } %>
+              <td>
+                <%= k_hidden_field_tag :invoice_id %>
+                <%= link_to "Save", "#", class: "persist",
+                  data: { k_uuid: "{{line_item.uuid}}", invoice_id: @invoice.id } %>
               </td>
               <td><%= link_to "Delete", "#", class: "delete",
                 data: { k_uuid: "{{line_item.uuid}}", id: "{{line_item.id}}" } %>
