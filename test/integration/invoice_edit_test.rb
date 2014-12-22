@@ -85,13 +85,11 @@ describe "Line Item Kindred Integration", type: :feature, js: true do
         page.find("input[data-attr='description'][data-k-uuid='#{@uuid1}']").value.must_equal "something1"
         find("input[data-k-uuid='" + @uuid1 + "'][data-attr='qty']").set("not a number")
         click_link 'Save All'
-        sleep 0.2
-
+        sleep 0.1
         page.all(".error").count.must_equal(1)
         find("input[data-k-uuid='" + @uuid1 + "'][data-attr='qty']").set "555"
         click_link 'Save All'
-        sleep 0.2
-
+        sleep 0.1
         LineItem.find_by(uuid: @uuid1).qty.must_equal 555
         page.all(".error").count.must_equal(0)
       }
@@ -104,9 +102,13 @@ describe "Line Item Kindred Integration", type: :feature, js: true do
         click_link 'New Line Item'
         click_link 'New Line Item'
         click_link 'Save All'
+        sleep 0.1
+        page.evaluate_script('jQuery.active == 0').must_equal true
         page.all(".error").count.must_equal(6)
         all('input').each { |i| i.set("1") }
         click_link 'Save All'
+        sleep 0.1
+        page.evaluate_script('jQuery.active == 0').must_equal true
         page.all(".error").count.must_equal(0)
         LineItem.count.must_equal 2
       }
