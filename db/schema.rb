@@ -13,8 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20141211073904) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "invoices", force: true do |t|
-    t.binary   "uuid",           limit: 16
+    t.binary   "uuid"
     t.date     "date"
     t.integer  "subtotal_cents"
     t.integer  "shipping_cents"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20141211073904) do
   end
 
   create_table "line_items", force: true do |t|
-    t.binary   "uuid",        limit: 16
+    t.binary   "uuid"
     t.integer  "invoice_id"
     t.text     "description"
     t.integer  "qty"
