@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require kindred
-//= require models/line_item
-//= require controllers/invoices_controller
-//= require listeners/invoice_listeners
-//= require helpers/line_items_helper
 //= require highlight.pack
+//= require_tree ./models
+//= require_tree ./controllers
+//= require_tree ./listeners
+//= require_tree ./helpers
 
 $(document).ready(function() {
   $('pre code').each(function(i, block) {

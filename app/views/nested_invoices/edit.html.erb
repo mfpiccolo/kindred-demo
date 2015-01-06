@@ -1,0 +1,68 @@
+
+<h3>Boxes</h3>
+<fieldset id="boxes">
+  <div <%= target @invoice %>>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= link_to '+ New Box', "#", class: "new-box button tiny right",
+            data: { target_uuid: @invoice.uuid, "invoice_id" => @invoice.id } %>
+        <%= link_to 'Save All', "#", id: "box-line-items-save-all", class: "button tiny right" %>
+      </div>
+    </div>
+    <%= template(collection: @boxes, target_uuid: @invoice.uuid, model: "box") do %>
+      <%= k_hidden_field_tag :delete_box %>
+      <%= k_hidden_field_tag :invoice_id, @invoice.id %>
+      <fieldset data-k-uuid="{{box.uuid}}">
+
+        <legend>Box #{{box.id}}</legend>
+        <table style="width: 100%" border="1">
+          <thead>
+            <tr>
+              <th>QTY</th>
+              <th>Color</th>
+              <th>Desc</th>
+              <th></th>
+            </tr>
+          </thead>
+          <!-- TODO Need data helper here -->
+          <tbody data-target-uuid="{{box.uuid}}", data-target>
+            <%= link_to fa_icon("fa-minus-circle", text: "Delete",
+              class: "fa-minus-circle"), "#", class: "delete-box box-level right",
+              data: { k_uuid: "{{box_line_item.uuid}}" } %>
+            <%= link_to fa_icon("fa-plus-circle", text: "Add Back",
+              class: "fa-plus-circle"), "#", class: "add-box-back box-level hide right",
+              data: { k_uuid: "{{box_line_item.uuid}}" } %>
+            <%= link_to 'New Box Line Item', "#", class: "new-box-line-item button tiny",
+              data: { box_id: "{{box.id}}", "target_uuid" => "{{box.uuid}}" } %>
+            <%= template(collection: @box_line_items, target_uuid: "box", model: "box_line_item") do %>
+              <tr>
+                <td>
+                  <%= k_text_field_tag(:box_line_item, :qty) %>
+                  <%= error_for(:box_line_item, :qty) %>
+                </td>
+                <td>
+                  <%= k_text_field_tag(:box_line_item, :color, disabled: true) %>
+                  <%= error_for(:box_line_item, :color) %>
+                </td>
+                <td>
+                  <%= k_text_field_tag(:box_line_item, :description, disabled: true) %>
+                  <%= error_for(:box_line_item, :description) %>
+                </td>
+                <td>
+                  <%= k_hidden_field_tag :box_id %>
+                  <%= k_hidden_field_tag :delete %>
+                  <%= link_to fa_icon("fa-minus-circle", text: "Remove",
+                        class: "fa-minus-circle"), "#", class: "remove-box-li",
+                        data: { k_uuid: "{{box_line_item.uuid}}" } %>
+                  <%= link_to fa_icon("fa-plus-circle", text: "Add Back",
+                        class: "fa-plus-circle"), "#", class: "add-box-li-back hide",
+                        data: { k_uuid: "{{box_line_item.uuid}}" } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </fieldset>
+    <% end %>
+  </div>
+</fieldset>

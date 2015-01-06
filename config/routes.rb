@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  resources :nested_invoices
+
   resources :invoices
   resources :line_items do
-    patch :save_all, on: :collection
+    put :save_all, on: :collection
+  end
 
-    # This is for capybara-webkit testing.  Patch does not submit data
+  resources :boxes, only: [:create, :update, :index]
+  resources :box_line_items, only: [:destroy] do
     put :save_all, on: :collection
   end
 

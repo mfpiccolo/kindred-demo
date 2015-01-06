@@ -148,3 +148,17 @@ select {
 }
 /*end select*/
 
+.flag-remove {
+  background-color: rgba(orange, .4) !important;
+
+  input,
+  select {
+    text-decoration: line-through;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+

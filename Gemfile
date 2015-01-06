@@ -23,8 +23,8 @@ gem "jbuilder", "~> 2.0"
 # bundle exec rake doc:rails generates the API under doc/api.
 gem "sdoc", "~> 0.4.0",          group: :doc
 
-gem "happy_place", "~> 0.0.4"
-gem "kindred-rails", "~> 0.0.4"
+gem "happy_place", "~> 0.0.7"
+gem "kindred-rails", "~> 0.0.6"
 
 gem "font-awesome-rails"
 

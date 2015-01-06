@@ -1,5 +1,6 @@
 class Invoice < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
+  has_many :boxes
 
   before_validation :calculate
   after_initialize :finalize
