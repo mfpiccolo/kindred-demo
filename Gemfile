@@ -24,9 +24,13 @@ gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0",          group: :doc
 
 gem "happy_place", "~> 0.0.7"
-gem "kindred-rails", "~> 0.0.6"
+gem "kindred", "~> 0.0.1"
 
 gem "font-awesome-rails"
+
+gem "high_voltage"
+
+gem "twitter-bootstrap-rails"
 
 group :development do
   gem "pry-byebug"

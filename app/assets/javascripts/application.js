@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require kindred
 //= require highlight.pack
 //= require_tree ./models
