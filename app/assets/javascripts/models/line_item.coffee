@@ -14,10 +14,7 @@ class App.LineItem extends App.Base
       model.assign_attributes(attrs)
       model._clear_errors()
       model._update_data_vals_on_page()
-
-      unless (userAgent = window?.navigator?.userAgent).match /capybara-webkit/ || userAgent.match /PhantomJS/
-        # TODO this won't work with webkit
-        model.mark_dirty_or_clean()
+      model.mark_dirty_or_clean()
 
   mark_dirty_or_clean: =>
     if !@id?
