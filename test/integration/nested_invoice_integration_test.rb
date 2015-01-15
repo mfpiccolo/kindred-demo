@@ -10,6 +10,5 @@ describe "Nested Invoice Kindred Integration", type: :feature, js: true do
     visit "/nested_invoices/#{@invoice.id}/edit"
     click_link "+ New Box"
     click_link "New Box Line Item"
-    save_and_open_page
   end
 end

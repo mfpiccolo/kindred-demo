@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby "2.2.0"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "4.1.8"
 gem "pg"
@@ -24,7 +26,7 @@ gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0",          group: :doc
 
 gem "happy_place", "~> 0.0.7"
-gem "kindred", "~> 0.0.1"
+gem "kindred", path: "~/code/mfpiccolo/kindred"
 
 gem "font-awesome-rails"
 

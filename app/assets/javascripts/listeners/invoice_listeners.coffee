@@ -2,7 +2,7 @@ class App.InvoiceListeners extends App.Listener
 
   @set: ->
     $("#line-item-table").on "click.Listeners.LineItem.save", ".persist", (evt) =>
-      console.log @params $(evt.toElement).data()
+      @params $(evt.toElement).data()
       li = new App.LineItem(@params $(evt.toElement).data())
       li.assign_attributes_from_page()
       li.save()

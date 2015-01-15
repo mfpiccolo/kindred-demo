@@ -1,3 +1,10 @@
+PATH
+  remote: ~/code/mfpiccolo/kindred
+  specs:
+    kindred (0.0.1)
+      happy_place (>= 0.0.6)
+      rails (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -112,9 +119,6 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
-    kindred (0.0.1)
-      happy_place (>= 0.0.6)
-      rails (>= 3.0)
     konacha (3.3.0)
       actionpack (>= 3.1, < 5)
       capybara
@@ -255,7 +259,7 @@ DEPENDENCIES
   high_voltage
   jbuilder (~> 2.0)
   jquery-rails
-  kindred (~> 0.0.1)
+  kindred!
   launchy
   mocha
   pg

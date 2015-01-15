@@ -1,90 +1,273 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "KindredDemo" %></title>
-    <%= csrf_meta_tags %>
+<html lang="en" data-ember-extension="1"><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Kindred Demo</title>
+        <meta name="generator" content="Bootply">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
-    <![endif]-->
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="/bootstrap/img/favicon.ico">
+        <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Roboto' rel='stylesheet' type='text/css'>
 
-    <!-- For third-generation iPad with high-resolution Retina display: -->
-    <!-- Size should be 144 x 144 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
+    </head>
 
-    <!-- For iPhone with high-resolution Retina display: -->
-    <!-- Size should be 114 x 114 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+    <!-- HTML code from Bootply.com editor -->
 
-    <!-- For first- and second-generation iPad: -->
-    <!-- Size should be 72 x 72 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="../navbar/">Default</a></li>
+                <li><a href="../navbar-static-top/">Static top</a></li>
+                <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
 
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <!-- Size should be 57 x 57 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <div class="wrapper">
+    <div class="box">
+    <div id="bg-image"></div>
+    <div id="overlay"></div>
+        <div class="row">
 
-    <!-- For all other devices -->
-    <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+            <!-- sidebar -->
+            <div class="column col-sm-2" id="sidebar">
 
-    <%= javascript_include_tag "application" %>
-  </head>
-  <body>
+                <a class="logo" href="#">K</a>
+                <ul class="nav">
+                    <li>Introduction</li>
+                    <li class="active"><a href="#why-kindred">Why Kindred?</a></li>
+                    <li class="active"><a href="#what-kindred">What is Kindred?</a></li>
+                    <li>Ruby</li>
+                    <li><a href="#stories">Templates</a></li>
+                    <li><a href="#stories">Page Specific</a></li>
+                    <li>Javascript</li>
+                    <li><a href="#stories">Models</a></li>
+                    <li><a href="#stories">Controllers</a></li>
+                    <li><a href="#stories">Listeners</a></li>
+                    <li><a href="#stories">Logging</a></li>
+                </ul>
+                <ul class="nav hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="#"><h3>Kindred</h3>Any page can be a single page app</a>
+                    </li>
+                </ul>
 
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">KindredDemo</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Introduction", "/path1"  %></li>
-            <li><%= link_to "Demo", "/path2"  %></li>
-            <li><%= link_to "Nested Demo", "/path3"  %></li>
-          </ul>
+            </div>
+            <!-- /sidebar -->
+
+            <!-- main -->
+            <div class="column col-sm-10" id="main">
+                <div class="padding">
+                    <div class="full col-sm-9">
+
+                        <!-- content -->
+
+                        <div class="col-sm-12" id="why-kindred">
+                          <div class="page-header text-muted">
+                          Why Kindred?
+                          </div>
+                        </div>
+
+                        <!--/top story-->
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <p>Kindred is an open source project that intends to optimize programmers happiness and productivity for client-heavy rails applications. Kindred aims to allow developers to create robust client side applications with minimal code while maintaining best practices and conventions.</p>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-12" id="what-kindred">
+                          <div class="page-header text-muted">
+                          What is Kindred?
+                          </div>
+                        </div>
+
+                        <!--/top story-->
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <p>The core of Kindred is a javascirpt model class (App.Base) built with using object oriented concepts.  Kindred models inherit (extend) from this class much like you would do with ActiveRecord::Base in ruby.  This gives you an api to allow for both interaction between the page (DOM) and the server.</p>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-12" id="stories">
+                          <div class="page-header text-muted divider">
+                            Top Stories
+                          </div>
+                        </div>
+
+
+                        <!--/stories-->
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <h3>Dramatically Raise the Value of Any Piece of Content</h3>
+                            <h4><span class="label label-default">searchenginewatch.com</span></h4><h4>
+                            <small class="text-muted">1 hour ago • <a href="#" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-right"><img src="http://api.randomuser.me/portraits/thumb/men/86.jpg" class="img-circle"></a>
+                          </div>
+                        </div>
+
+                        <div class="row divider">
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <h3>14 Useful Sites for Designers</h3>
+                            <h4><span class="label label-default">devgarage.com</span></h4><h4>
+                            <small class="text-muted">2 days ago • <a href="#" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-right"><img src="http://api.randomuser.me/portraits/thumb/men/19.jpg" class="img-circle"></a>
+                          </div>
+                        </div>
+
+                        <div class="row divider">
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <h3>Bootstrap Builders Get Their Own Playground</h3>
+                            <h4><span class="label label-default">bootply.com</span></h4><h4>
+                            <small class="text-muted">3 days ago • <a href="#" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-right"><img src="http://api.randomuser.me/portraits/thumb/women/17.jpg" class="img-circle"></a>
+                          </div>
+                        </div>
+
+                        <div class="row divider">
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-10">
+                            <h3>How to: Another Fantastical Article</h3>
+                            <h4><span class="label label-default">bootply.com</span></h4><h4>
+                            <small class="text-muted">4 days ago • <a href="#" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-2">
+                            <a href="#" class="pull-right"><img src="http://api.randomuser.me/portraits/thumb/men/86.jpg" class="img-circle"></a>
+                          </div>
+                        </div>
+
+                        <div class="row divider">
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-9">
+                            <h3>Another Fantastical Article of Interest</h3>
+                            <h4><span class="label label-default">bootply.com</span></h4><h4>
+                            <small class="text-muted">4 days ago • <a href="#" class="text-muted">Read More</a></small>
+                            </h4>
+                          </div>
+                          <div class="col-sm-3">
+                            <a href="#" class="pull-right"><img src="http://api.randomuser.me/portraits/thumb/women/17.jpg" class="img-circle"></a>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                          <div class="page-header text-muted divider">
+                            Up Next
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-4 text-center">
+                            <h4>Related 1</h4>
+                            <a href="#"><img src="//placehold.it/400/f0f0f0" class="img-respsonsive img-circle"></a>
+                          </div>
+                          <div class="col-sm-4 text-center">
+                            <h4>Related 2</h4>
+                            <a href="#"><img src="//placehold.it/400/f0f0f0" class="img-respsonsive img-circle"></a>
+                          </div>
+                          <div class="col-sm-4 text-center">
+                            <h4>Related 3</h4>
+                            <a href="#"><img src="//placehold.it/400/f0f0f0" class="img-respsonsive img-circle"></a>
+                          </div>
+                        </div>
+
+
+                        <div class="col-sm-12">
+                          <div class="page-header text-muted divider">
+                            Connect with Us
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
+                          </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row" id="footer">
+                          <div class="col-sm-6">
+
+                          </div>
+                          <div class="col-sm-6">
+                            <p>
+                            <a href="#" class="pull-right">©Copyright Inc.</a>
+                            </p>
+                          </div>
+                        </div>
+
+                      <hr>
+
+                      <hr>
+
+
+                    </div><!-- /col-9 -->
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+
         </div>
-      </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Introduction</li>
-              <li><%= link_to "Why Kindred?", "/path1"  %></li>
-              <li class="nav-header">Ruby</li>
-              <li><%= link_to "Template", "/path2"  %></li>
-              <li><%= link_to "Page Specific Javascript", "/path2"  %></li>
-              <li class="nav-header">Javascript</li>
-              <li><%= link_to "Controllers", "/path2"  %></li>
-              <li><%= link_to "Models", "/path2"  %></li>
-              <li><%= link_to "Listeners", "/path2"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="col-sm-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-  </body>
-</html>
+</div>
+</body></html>
